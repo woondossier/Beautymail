@@ -66,6 +66,11 @@ class Beautymail implements Mailer
         return $this->mailer;
     }
 
+    public function setMailer($mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
     /**
      * Send a new message using a view.
      *
