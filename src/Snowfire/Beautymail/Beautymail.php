@@ -4,6 +4,7 @@ namespace Snowfire\Beautymail;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Mail\PendingMail;
+use Swift_Mailer;
 
 class Beautymail implements Mailer
 {
@@ -66,9 +67,12 @@ class Beautymail implements Mailer
         return $this->mailer;
     }
 
-    public function setMailer($mailer)
+    /**
+     * @param Swift_Mailer $mailer
+     */
+    public function setMailer(Swift_Mailer $mailer)
     {
-        $this->mailer = $mailer;
+        $this->mailer->setSwiftMailer($mailer);
     }
 
     /**
