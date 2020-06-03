@@ -11,13 +11,25 @@
     ],
     "require": {
         "php": ">=5.4.0",
+<<<<<<< HEAD
         "illuminate/support": "4.*|5.*",
         "pelago/emogrifier": "2.2.0"
+=======
+        "illuminate/support": "4.*|5.*|^6.0.0|^7.0.0",
+	"pelago/emogrifier": "^3.0"
+>>>>>>> 5fc2b5eb4d9e59d9d3167d193db03d1ec6c543f3
     },
     "autoload": {
         "psr-0": {
             "Snowfire\\Beautymail\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Snowfire\\Beautymail\\BeautymailServiceProvider"
+            ]
+        }
+    }
 }
