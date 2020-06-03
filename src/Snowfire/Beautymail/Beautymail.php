@@ -148,10 +148,13 @@ class Beautymail implements Mailer
      */
     private function setLogoPath()
     {
-        $this->settings['logo']['path'] = str_replace(
-            '%PUBLIC%',
-            \Request::getSchemeAndHttpHost(),
-            $this->settings['logo']['path']
-        );
+        if(isset($this->settings['logo']) && isset($this->settings['logo']['path']))
+        {
+            $this->settings['logo']['path'] = str_replace(
+                '%PUBLIC%',
+                \Request::getSchemeAndHttpHost(),
+                $this->settings['logo']['path']
+            );
+        }
     }
 }
